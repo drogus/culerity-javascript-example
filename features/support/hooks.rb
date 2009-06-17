@@ -12,6 +12,6 @@ Before("@js") do |scenario|
 end
 
 at_exit do
-  $browser.exit
+  $browser.close
   $server.close
 end
