@@ -1,4 +1,5 @@
 require 'culerity'
+`mongrel_rails start -e cucumber -p 3001 -d`
 
 Before do
   $server ||= Culerity::run_server
@@ -14,4 +15,5 @@ end
 at_exit do
   $browser.exit
   $server.close
+  `mongrel_rails stop`
 end
